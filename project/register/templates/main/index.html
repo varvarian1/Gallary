@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/register.css' %}" />
+    <title>Enter</title>
+  </head>
+  <body>
+    {% block content %}
+    <div class="wrap">
+      <form class="register" method="post">
+        {% csrf_token %}
+        <div class="register__input">
+          <label for="login_password" class="register__label">Password</label>
+          {{ form.admin_password }}
+          <span>{{ error }}</span>
+          <button type="button" class="show__hide" id="togglePasswordButton">
+            <i class="fa-solid fa-eye" style="color: #ffffff"></i>
+          </button>
+        </div>
+        <button type="submit" value="Create Account" class="register__btn">
+          <i class="fa-solid fa-right-to-bracket" style="color: #ffffff"></i>
+        </button>
+      </form>
+    </div>
+    {% endblock %}
+    <script src="{% static 'js/password.js'%}"></script>
+  </body>
+</html>

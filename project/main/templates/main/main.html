@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/media.css' %}" />
+  </head>
+  <body>
+    {% include "./navbar.html" %}
+    <main>
+      <div id="about" class="main-header">
+        <h1 class="page__title">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit minus
+          placeat quas ipsam laudantium perferendis esse quaerat delectus
+          dolorem fuga.
+        </h1>
+        <p class="page__sub-title">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus,
+          quidem.
+        </p>
+      </div>
+      <div id="projects" class="main-content">
+        <h2 class="main__title">Projects</h2>
+        <div  class="categories-cards">
+          <div class="category-card active" data-category="All">
+            <h2 class="category__name">All</h2>
+          </div>
+          <!-- Добавьте эту строку -->
+          {% for category in categories %}
+          <div class="category-card" data-category="{{ category.name }}">
+            <h2 class="category__name">{{ category.name }}</h2>
+          </div>
+          {% endfor %}
+        </div>
+
+        <div class="gallery__cards" id="gallery">
+          {% for el in photo %}
+          <div class="gallery__card">
+            {% if el.image %}
+            <div class="image-container">
+              <img
+                class="main-img"
+                src="{{ BASIC_DIR }}{{ el.image.url }}"
+                data-src="{{ BASIC_DIR }}{{ el.image.url }}"
+                alt="{{ el.title }}"
+              />
+              <div class="gallery-card__decor">
+                <div class="decor__text">
+                  <h3 class="decor__title">{{ el.title }}</h3>
+                  <p class="decor__descr">{{ el.description }}</p>
+                  <p
+                    class="decor__category"
+                    data-category="{{ el.category }}"
+                  ></p>
+                </div>
+              </div>
+            </div>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </main>
+    <div class="fullscreen-image">
+      <span class="close-button" id="close-button">Close</span>
+      <div class="fullscreen-content">
+        <img
+          class="fullscreen-img"
+          id="fullscreen-img"
+          src=""
+          alt="Fullscreen Image"
+        />
+        <div class="fullscreen-text">
+          <h3 class="fullscreen-title"></h3>
+          <p class="fullscreen-descr"></p>
+        </div>
+      </div>
+    </div>
+    <section id="contacts" class="contacts">
+      <div class="contacts-content container">
+        <div class="contact__card">
+          <a href="https://maps.app.goo.gl/nCXzkUsYodvADioZ6" class="card-link">
+            <i class="fa-solid fa-location-dot"></i>107 Амир Темур шоҳ кўчаси,
+            Тоshkent 100084, Узбекистан</a
+          >
+        </div>
+        <div class="contact__card">
+          <a href="tel:+998974140830" class="card-link">
+            <i class="fa-solid fa-phone-volume"></i>+998(97)414 08 30</a
+          >
+        </div>
+        <div class="contact__card">
+          <a href="mailto:akmalibragimov@gmail.com" class="card-link">
+            <i class="fa-solid fa-envelope"></i> akmalibragimov@gmail.com</a
+          >
+        </div>
+      </div>
+    </section>
+    {% include "./footer.html" %}
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html>

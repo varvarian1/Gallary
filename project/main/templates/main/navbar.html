@@ -1,0 +1,45 @@
+{% load static %}
+<div class="navbar">
+  <div class="navbar-content container">
+    <a href="/main"><img src="{% static 'imgs/logo.svg' %}" alt="logo" /></a>
+    <button class="burger-button">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <ul class="navbar-lists">
+      <li class="navbar__list"><a href="/main" class="navbar__link">Home</a></li>
+      <li class="navbar__list"><a href="#about" class="navbar__link">About</a></li>
+      <li class="navbar__list"><a href="#projects" class="navbar__link">Projects</a></li>
+      <li class="navbar__list"><a href="#contacts" class="navbar__link">Contacts</a></li>
+    </ul>
+  </div>
+  <div class="mobile-menu">
+    <ul class="mobile-menu-list">
+      <li class="mobile-menu__list">
+        <a href="" class="navbar__link">Home</a>
+      </li>
+      <li class="mobile-menu__list">
+        <a href="" class="navbar__link">About</a>
+      </li>
+      <li class="mobile-menu__list">
+        <a href="" class="navbar__link">Projects</a>
+      </li>
+      <li class="mobile-menu__list">
+        <a href="" class="navbar__link">Contacts</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const burgerButton = document.querySelector('.burger-button')
+    const mobileMenu = document.querySelector('.mobile-menu')
+
+    burgerButton.addEventListener('click', function () {
+      mobileMenu.classList.toggle('show-mobile-menu')
+    })
+
+    mobileMenu.addEventListener('click', function () {
+      mobileMenu.classList.remove('show-mobile-menu')
+    })
+  })
+</script>

@@ -1,0 +1,95 @@
+/* Стили для мобильных устройств (ширина меньше 768px) */
+@media (max-width: 768px) {
+  .main-header {
+    padding: 20px 0;
+  }
+  .burger-button {
+    display: block;
+  }
+
+  .navbar-lists {
+    display: none; /* Скрываем обычное меню на маленьких экранах */
+  }
+
+  /* Показываем мобильное меню при клике на бургер-кнопку */
+  .burger-button:focus + .mobile-menu {
+    display: block;
+  }
+  .main__title {
+    font-size: 24px;
+  }
+  .page__title {
+    font-size: 24px;
+    line-height: 36px;
+  }
+  .decor__title {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  .decor__descr {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  .fullscreen-title {
+    font-size: 24px;
+    bottom: 10%;
+  }
+  .fullscreen-descr {
+    font-size: 20px;
+    bottom: 5%;
+  }
+}
+
+/* Стили для планшетов (ширина от 769px до 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .main__title {
+    font-size: 26px;
+  }
+  .page__title {
+    font-size: 28px;
+    line-height: 40px;
+  }
+  .decor__title {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  .decor__descr {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .fullscreen-title {
+    font-size: 28px;
+    bottom: 12%;
+  }
+  .fullscreen-descr {
+    font-size: 24px;
+    bottom: 7%;
+  }
+}
+
+/* Стили для десктопов (ширина больше 1024px) */
+@media (min-width: 1025px) {
+  .main__title {
+    font-size: 28px;
+  }
+  .page__title {
+    font-size: 34px;
+    line-height: 50px;
+  }
+  .decor__title {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  .decor__descr {
+    font-size: 27px;
+    margin-bottom: 10px;
+  }
+  .fullscreen-title {
+    font-size: 34px;
+    bottom: 15%;
+  }
+  .fullscreen-descr {
+    font-size: 28px;
+    bottom: 10%;
+  }
+}

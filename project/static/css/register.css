@@ -1,0 +1,54 @@
+@import "style.css";
+
+.wrap{
+    background-color: #272727;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.register__input{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+}
+.register__label{
+    color: white;
+    font-size: 28px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 5px;
+}
+
+.register__input input{
+    background: none;
+    color: white;
+    padding: 5px 15px;
+    font-size: 24px;
+    width: 400px;
+    border: 1px solid white;
+    border-radius: 20px;
+}
+.register__btn{
+    background: none;
+    color: white;
+    font-size: 24px;
+    margin-top: 10px;
+    letter-spacing: 5px;
+    text-align: right;
+    padding-right: 15px;
+    width: 400px;
+}
+.show__hide{
+    position: absolute;
+    background: none;
+    font-size: 24px;
+    top: 89%;
+    right: 5%;
+    transform: translateY(-100%);
+}
